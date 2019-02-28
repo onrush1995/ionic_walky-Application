@@ -30,15 +30,15 @@ export class HomePage {
                     this.y = acc.y;
                     this.z = acc.z;
                     this.timeStamp = acc.timestamp;
-                const result = (this.x * this.x + this.y * this.y + this.z * this.z) / (9 * 9);
+                const result = Math.sqrt((this.x * this.x + this.y * this.y + this.z * this.z) );
                 console.log(result);
 
-                const newX = Math.abs(this.x);
+                const newX =(this.x);
 
-                if ( newX > 1.0 && result < 1.5 ) {
+                if ( newX > 1.0 && result < 2.5 ) {
                     this.status = 'Walking';
                 }
-                if ( newX > 1.5 ) {
+                if ( newX > 2.5 ) {
                     this.status = 'Running';
                 }
                 if ( newX < 1 ) {
