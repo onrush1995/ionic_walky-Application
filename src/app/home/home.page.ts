@@ -30,20 +30,23 @@ export class HomePage {
                     this.y = acc.y;
                     this.z = acc.z;
                     this.timeStamp = acc.timestamp;
-                const result = Math.sqrt((this.x * this.x + this.y * this.y + this.z * this.z) );
-                console.log(result);
+                    const result = (Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z));
+                    console.log(result);
 
-                const newX =(this.x);
+                
+               
+                const newX = Math.abs(this.x);
 
-                if ( newX > 1.0 && result < 2.5 ) {
+                if ( newX > 1.0 && result < 15) {
                     this.status = 'Walking';
                 }
-                if ( newX > 2.5 ) {
-                    this.status = 'Running';
-                }
-                if ( newX < 1 ) {
-                    this.status = 'Resting';
-                }
+                if ( result > 15 ) {
+                    this.status = 'Running';}
+                
+                if ( newX < 1) {
+                    this.status = 'Resting';}
+                
+                
             });
         } catch (err) {
             alert('Error' + err);
